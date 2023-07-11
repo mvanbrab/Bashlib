@@ -82,19 +82,20 @@ export default async function authenticate(options: ILoginOptions): Promise<{ fe
 
 async function queryUserAuthentication() { 
   // Ask the user if they want to authenticate. If not, use cross-fetch, else give them a prompt to provide an idp
-  console.log(`Do you want to authenticate the current request? [Y, n] `);
-  let userWantsToAuthenticate : boolean = await new Promise((resolve, reject) => {
-    process.stdin.setRawMode(true);
-    process.stdin.resume();
-    process.stdin.on('data', (chk) => {
-      if (chk.toString('utf8') === "n") {
-        resolve(false);
-      } else {
-        resolve(true);
-      }
-    });
-  });
-  return userWantsToAuthenticate
+//  console.log(`Do you want to authenticate the current request? [Y, n] `);
+//  let userWantsToAuthenticate : boolean = await new Promise((resolve, reject) => {
+//    process.stdin.setRawMode(true);
+//    process.stdin.resume();
+//    process.stdin.on('data', (chk) => {
+//      if (chk.toString('utf8') === "n") {
+//        resolve(false);
+//      } else {
+//        resolve(true);
+//      }
+//    });
+//  });
+//  return userWantsToAuthenticate
+  return false
 }
 
 
